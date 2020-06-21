@@ -4,6 +4,7 @@ import './App.css';
 
 import NavBar from './components/NavBar';
 import Onboarding from './components/Onboarding';
+import About from './components/About';
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 			<NavBar />
 			<div className='content'>
 				<Route exact path='/' component={Onboarding} />
+				<Route path='/about' component={About} />
 			</div>
 		</div>
 	);

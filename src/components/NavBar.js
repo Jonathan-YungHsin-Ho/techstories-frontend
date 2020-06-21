@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Container, Header, Icon, Menu } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function NavBar() {
-	const [activeItem, setActiveItem] = useState('onboarding');
+	const location = useLocation();
+
+	const initialLocation =
+		location.pathname === '/about' ? 'about' : 'onboarding';
+
+	const [activeItem, setActiveItem] = useState(initialLocation);
 
 	const handleClick = (e, { name }) => setActiveItem(name);
 
