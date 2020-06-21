@@ -3,7 +3,7 @@ import { Card, Icon } from 'semantic-ui-react';
 
 export default function OnboardingCard({ story }) {
 	return (
-		<Card color={story.positive ? 'green' : 'red'}>
+		<Card color={story.positiveOnboarding ? 'green' : 'red'}>
 			<Card.Content>
 				{story.company && (
 					<div>
