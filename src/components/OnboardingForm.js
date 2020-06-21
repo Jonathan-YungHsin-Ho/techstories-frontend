@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Button, Modal, Form } from 'semantic-ui-react';
 
 const initialInfo = {
@@ -12,21 +13,36 @@ const initialInfo = {
 	positiveOnboarding: null,
 };
 
-export default function OnboardingForm() {
+export default function OnboardingForm({ data, setData }) {
 	const [info, setInfo] = useState(initialInfo);
+	const [modalOpen, setModalOpen] = useState(false);
 
 	const handleChange = (e) =>
 		setInfo({ ...info, [e.target.name]: e.target.value });
 
 	const handleRadio = (field, value) => setInfo({ ...info, [field]: value });
 
-	const handleSubmit = () => console.log(info);
+	const handleSubmit = () => {
+		console.log(info);
+		axios
+			.post('https://techstories.herokuapp.com/api/onboarding', info)
+			.then((res) => {
+				setData([...data, res.data.onboarding]);
+				setInfo(initialInfo);
+				setModalOpen(false);
+			})
+			.catch((err) => console.log(err));
+	};
 
 	return (
 		<Modal
-			trigger={<Button content='Share Your Story' />}
+			trigger={
+				<Button onClick={() => setModalOpen(true)} content='Share Your Story' />
+			}
 			size='tiny'
 			dimmer='inverted'
+			open={modalOpen}
+			onClose={() => setModalOpen(false)}
 			closeIcon>
 			<Modal.Header>Share Your Story</Modal.Header>
 			<Modal.Content>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
 	Container,
 	Card,
@@ -7,17 +8,28 @@ import {
 	// Search,
 } from 'semantic-ui-react';
 
-import { data } from '../tempdata';
+// import { data } from '../tempdata';
 
 import OnboardingForm from './OnboardingForm';
 import OnboardingCard from './OnboardingCard';
 
 export default function Onboarding() {
+	const [data, setData] = useState([]);
+
+	useEffect(() => {
+		axios
+			.get('https://techstories.herokuapp.com/api/onboarding')
+			.then((res) => {
+				setData(res.data);
+			})
+			.catch((err) => console.log(err));
+	}, []);
+
 	return (
 		<Container>
 			<Grid columns='equal'>
 				<Grid.Column>
-					<OnboardingForm />
+					<OnboardingForm data={data} setData={setData} />
 				</Grid.Column>
 				{/* <Grid.Column>
 					<Search />
