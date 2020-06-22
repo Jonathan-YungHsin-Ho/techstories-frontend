@@ -3,11 +3,14 @@ import axios from 'axios';
 import { Button, Modal, Form } from 'semantic-ui-react';
 
 const initialInfo = {
-	company: '',
-	industry: '',
+	name: null,
+	email: null,
+	company: null,
+	companyURL: null,
+	industry: null,
 	companyType: null,
-	companySize: '',
-	onboardingDuration: '',
+	companySize: null,
+	onboardingDuration: null,
 	mentorProvided: null,
 	experience: '',
 	positiveOnboarding: null,
@@ -47,29 +50,55 @@ export default function OnboardingForm({ data, setData }) {
 			<Modal.Header>Share Your Story</Modal.Header>
 			<Modal.Content>
 				<Form>
-					<Form.Input
-						label='Company'
-						placeholder='Company'
-						name='company'
+					<Form.Group widths='equal'>
+						<Form.Input
+							fluid
+							label='Your Name'
+							placeholder='Your name'
+							name='name'
+							onChange={handleChange}
+						/>
+						<Form.Input
+							fluid
+							label='Email'
+							placeholder='Email'
+							name='email'
+							onChange={handleChange}
+						/>
+					</Form.Group>
+					<Form.Group widths='equal'>
+						<Form.Input
+							fluid
+							label='Company'
+							placeholder='Company'
+							name='company'
+							onChange={handleChange}
+						/>
+						<Form.Input
+							fluid
+							label='Industry'
+							placeholder='Industry'
+							name='industry'
+							onChange={handleChange}
+						/>
+					</Form.Group>
+					{/* <Form.Input
+						label='Company Website'
+						placeholder='Company Website'
+						name='companyURL'
 						onChange={handleChange}
-					/>
-					<Form.Input
-						label='Industry'
-						placeholder='Industry'
-						name='industry'
-						onChange={handleChange}
-					/>
+					/> */}
 					<Form.Group name='companyType' inline>
 						<label>Company Type:</label>
 						<Form.Radio
 							label='Startup'
-							value='Startup'
+							// value='Startup'
 							checked={info.companyType === 'Startup'}
 							onChange={() => handleRadio('companyType', 'Startup')}
 						/>
 						<Form.Radio
 							label='Enterprise'
-							value='Enterprise'
+							// value='Enterprise'
 							checked={info.companyType === 'Enterprise'}
 							onChange={() => handleRadio('companyType', 'Enterprise')}
 						/>
@@ -90,13 +119,13 @@ export default function OnboardingForm({ data, setData }) {
 						<label>Were you assigned a mentor?</label>
 						<Form.Radio
 							label='Yes'
-							value={true}
+							// value={true}
 							checked={info.mentorProvided === true}
 							onChange={() => handleRadio('mentorProvided', true)}
 						/>
 						<Form.Radio
 							label='No'
-							value={false}
+							// value={false}
 							checked={info.mentorProvided === false}
 							onChange={() => handleRadio('mentorProvided', false)}
 						/>
@@ -112,13 +141,13 @@ export default function OnboardingForm({ data, setData }) {
 						<label>Did you have a positive onboarding experience?</label>
 						<Form.Radio
 							label='Yes'
-							value={true}
+							// value={true}
 							checked={info.positiveOnboarding === true}
 							onChange={() => handleRadio('positiveOnboarding', true)}
 						/>
 						<Form.Radio
 							label='No'
-							value={false}
+							// value={false}
 							checked={info.positiveOnboarding === false}
 							onChange={() => handleRadio('positiveOnboarding', false)}
 						/>

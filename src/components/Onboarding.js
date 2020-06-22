@@ -20,6 +20,7 @@ export default function Onboarding() {
 		axios
 			.get('https://techstories.herokuapp.com/api/onboarding')
 			.then((res) => {
+				console.log(res.data);
 				setData(res.data);
 			})
 			.catch((err) => console.log(err));
