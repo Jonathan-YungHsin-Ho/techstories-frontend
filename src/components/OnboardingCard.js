@@ -5,6 +5,11 @@ export default function OnboardingCard({ story }) {
 	return (
 		<Card color={story.positiveOnboarding ? 'green' : 'red'}>
 			<Card.Content>
+				{story.name && (
+					<div>
+						<span className='bold'>Name:</span> {story.name}
+					</div>
+				)}
 				{story.company && (
 					<div>
 						<span className='bold'>Company:</span> {story.company}

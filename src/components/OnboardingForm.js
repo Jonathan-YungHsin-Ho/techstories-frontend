@@ -18,6 +18,7 @@ const initialInfo = {
 
 export default function OnboardingForm({ data, setData }) {
 	const [info, setInfo] = useState(initialInfo);
+	const [error, setError] = useState(false);
 	const [modalOpen, setModalOpen] = useState(false);
 
 	const handleChange = (e) =>
@@ -26,7 +27,12 @@ export default function OnboardingForm({ data, setData }) {
 	const handleRadio = (field, value) => setInfo({ ...info, [field]: value });
 
 	const handleSubmit = () => {
-		console.log(info);
+		if (!info.experience) {
+			setError(true);
+			return;
+		}
+
+		// console.log(info);
 		axios
 			.post('https://techstories.herokuapp.com/api/onboarding', info)
 			.then((res) => {
@@ -135,6 +141,11 @@ export default function OnboardingForm({ data, setData }) {
 						label='Your Experience'
 						placeholder='Please share your onboarding experience...'
 						name='experience'
+						error={
+							error && {
+								content: 'This field is required',
+							}
+						}
 						onChange={handleChange}
 					/>
 					<Form.Group inline>

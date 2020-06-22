@@ -18,6 +18,7 @@ export default function About() {
 					<List.Item>Semantic UI</List.Item>
 					<List.Item>axios</List.Item>
 					<List.Item>Node.js</List.Item>
+					<List.Item>PostgresQL</List.Item>
 				</List>
 				<Label
 					attached='bottom right'
