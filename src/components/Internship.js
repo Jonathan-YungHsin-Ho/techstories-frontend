@@ -37,7 +37,7 @@ export default function Internship() {
 		<Container>
 			<Grid columns='equal'>
 				<Grid.Column>
-					<InternshipForm data={data} setData={setData} />
+					{/* <InternshipForm data={data} setData={setData} /> */}
 				</Grid.Column>
 				{/* <Grid.Column>
 					<Search />
