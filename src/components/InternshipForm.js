@@ -12,7 +12,7 @@ const initialInfo = {
 	companySize: null,
 	internshipDuration: null,
 	mentorProvided: null,
-	jobOffered: null,
+	positionOffered: null,
 	experience: '',
 	positiveInternship: null,
 };
@@ -33,7 +33,7 @@ export default function InternshipForm({ data, setData }) {
 			return;
 		}
 
-		// console.log(info);
+		console.log(info);
 		axios
 			.post(`${process.env.REACT_APP_BACKEND_API}/internship`, info)
 			.then((res) => {
