@@ -7,10 +7,9 @@ export default function About() {
 			<Segment>
 				<Header>About</Header>
 				<p>
-					Welcome! This site is for early-career developers, engineers, and
-					other tech workers to share their experiences once hired. Right now
-					visitors can read and share onboarding experiences. Future pages will
-					be added based on suggestions and feedback!
+					This site is for developers, engineers, and other tech workers to
+					share their early-career experiences once hired. All suggestions and
+					feedback welcome!
 				</p>
 				<Header>Tech Stack</Header>
 				<List bulleted>

@@ -10,17 +10,17 @@ import {
 	Segment,
 } from 'semantic-ui-react';
 
-import OnboardingForm from './OnboardingForm';
-import OnboardingCard from './OnboardingCard';
+import InternshipForm from './InternshipForm';
+import InternshipCard from './InternshipCard';
 
-export default function Onboarding() {
+export default function Internship() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [data, setData] = useState([]);
 	const [error, setError] = useState(false);
 
 	useEffect(() => {
 		axios
-			.get(`${process.env.REACT_APP_BACKEND_API}/onboarding`)
+			.get(`${process.env.REACT_APP_BACKEND_API}/internship`)
 			.then((res) => {
 				// console.log(res.data);
 				setIsLoading(false);
@@ -37,7 +37,7 @@ export default function Onboarding() {
 		<Container>
 			<Grid columns='equal'>
 				<Grid.Column>
-					<OnboardingForm data={data} setData={setData} />
+					<InternshipForm data={data} setData={setData} />
 				</Grid.Column>
 				{/* <Grid.Column>
 					<Search />
@@ -47,7 +47,7 @@ export default function Onboarding() {
 			<Loader active={isLoading} />
 			<Card.Group centered>
 				{data.map((story, index) => (
-					<OnboardingCard story={story} key={index} />
+					<InternshipCard story={story} key={index} />
 				))}
 			</Card.Group>
 			{error && <Segment>Error retrieving stories!</Segment>}
