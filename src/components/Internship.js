@@ -10,7 +10,7 @@ import {
 	Segment,
 } from 'semantic-ui-react';
 
-import InternshipForm from './InternshipForm';
+// import InternshipForm from './InternshipForm';
 import InternshipCard from './InternshipCard';
 
 export default function Internship() {
