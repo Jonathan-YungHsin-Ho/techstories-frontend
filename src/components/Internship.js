@@ -10,7 +10,7 @@ import {
 	Segment,
 } from 'semantic-ui-react';
 
-// import InternshipForm from './InternshipForm';
+import InternshipForm from './InternshipForm';
 import InternshipCard from './InternshipCard';
 
 export default function Internship() {
@@ -37,7 +37,7 @@ export default function Internship() {
 		<Container>
 			<Grid columns='equal'>
 				<Grid.Column>
-					{/* <InternshipForm data={data} setData={setData} /> */}
+					<InternshipForm data={data} setData={setData} />
 				</Grid.Column>
 				{/* <Grid.Column>
 					<Search />
