@@ -50,7 +50,11 @@ export default function Onboarding() {
 					<OnboardingCard story={story} key={index} />
 				))}
 			</Card.Group>
-			{error && <Segment>Error retrieving stories!</Segment>}
+			{error && (
+				<Segment textAlign='center' color='red' inverted secondary>
+					Error retrieving stories!
+				</Segment>
+			)}
 		</Container>
 	);
 }
