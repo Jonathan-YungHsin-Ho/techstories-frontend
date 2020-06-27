@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Button, Modal, Form } from 'semantic-ui-react';
+import { Button, Modal, Form, Icon } from 'semantic-ui-react';
 
 const initialInfo = {
 	name: null,
@@ -56,6 +56,13 @@ export default function InternshipForm({ data, setData }) {
 			closeIcon>
 			<Modal.Header>Share Your Story</Modal.Header>
 			<Modal.Content>
+				<p>
+					<Icon name='warning circle' size='large' />
+					Thank you for sharing your experience! Please note that only the{' '}
+					<span style={{ fontWeight: 'bold' }}>Your Experience</span> field is
+					required. The other fields are optional but would be public, so please
+					only share what you're comfortable with others seeing!
+				</p>
 				<Form>
 					<Form.Group widths='equal'>
 						<Form.Input
