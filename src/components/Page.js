@@ -10,7 +10,9 @@ import {
 	Segment,
 } from 'semantic-ui-react';
 
-export default function Page(page, FormComponent, CardComponent) {
+import FormWrapper from './FormWrapper';
+
+export default function Page(page, FormContent, initialInfo, CardComponent) {
 	const [isLoading, setIsLoading] = useState(true);
 	const [data, setData] = useState([]);
 	const [error, setError] = useState(false);
@@ -34,7 +36,13 @@ export default function Page(page, FormComponent, CardComponent) {
 		<Container>
 			<Grid columns='equal'>
 				<Grid.Column>
-					<FormComponent data={data} setData={setData} page={page} />
+					<FormWrapper
+						data={data}
+						setData={setData}
+						initialInfo={initialInfo}
+						component={FormContent}
+						page={page}
+					/>
 				</Grid.Column>
 				{/* <Grid.Column>
 					<Search />

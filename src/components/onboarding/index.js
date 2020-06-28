@@ -1,5 +1,12 @@
 import Onboarding from './Onboarding';
 import OnboardingCard from './OnboardingCard';
-import OnboardingForm from './OnboardingForm';
+import OnboardingFormContent, {
+	initialOnboardingInfo,
+} from './OnboardingFormContent';
 
-export { Onboarding, OnboardingCard, OnboardingForm };
+export {
+	Onboarding,
+	OnboardingCard,
+	OnboardingFormContent,
+	initialOnboardingInfo,
+};

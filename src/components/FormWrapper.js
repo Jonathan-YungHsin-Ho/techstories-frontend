@@ -3,13 +3,12 @@ import { Button, Modal, Icon } from 'semantic-ui-react';
 
 import { useForm } from '../hooks/useForm';
 
-// import OnboardingFormContent, { initialInfo } from './OnboardingFormContent';
-
 export default function FormWrapper({
 	data,
 	setData,
-	formContent: FormContent,
 	initialInfo,
+	component: FormContent,
+	page,
 }) {
 	const [
 		info,
@@ -19,7 +18,7 @@ export default function FormWrapper({
 		handleChange,
 		handleRadio,
 		handleSubmit,
-	] = useForm(initialInfo, data, setData);
+	] = useForm(initialInfo, data, setData, page);
 
 	return (
 		<Modal

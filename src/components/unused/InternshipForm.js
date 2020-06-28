@@ -3,9 +3,11 @@ import { Button, Modal, Icon } from 'semantic-ui-react';
 
 import { useForm } from '../../hooks/useForm';
 
-import OnboardingFormContent, { initialInfo } from './OnboardingFormContent';
+import InternshipFormContent, {
+	initialInfo,
+} from '../internship/InternshipFormContent';
 
-export default function OnboardingForm({ data, setData }) {
+export default function InternshipForm({ data, setData }) {
 	const [
 		info,
 		error,
@@ -35,7 +37,7 @@ export default function OnboardingForm({ data, setData }) {
 					required. The other fields are optional but would be public, so please
 					only share what you're comfortable with others seeing!
 				</p>
-				<OnboardingFormContent
+				<InternshipFormContent
 					info={info}
 					error={error}
 					handleChange={handleChange}

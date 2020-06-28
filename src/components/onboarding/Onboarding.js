@@ -1,6 +1,15 @@
 import Page from '../Page';
-import { OnboardingForm, OnboardingCard } from './';
+import {
+	OnboardingCard,
+	OnboardingFormContent,
+	initialOnboardingInfo,
+} from './';
 
 export default function Onboarding() {
-	return Page('onboarding', OnboardingForm, OnboardingCard);
+	return Page(
+		'onboarding',
+		OnboardingFormContent,
+		initialOnboardingInfo,
+		OnboardingCard,
+	);
 }

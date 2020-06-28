@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'semantic-ui-react';
 
-export const initialInfo = {
+export const initialInternshipInfo = {
 	name: null,
 	email: null,
 	company: null,

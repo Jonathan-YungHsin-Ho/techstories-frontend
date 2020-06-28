@@ -1,6 +1,15 @@
 import Page from '../Page';
-import { InternshipForm, InternshipCard } from './';
+import {
+	InternshipCard,
+	InternshipFormContent,
+	initialInternshipInfo,
+} from './';
 
 export default function Internship() {
-	return Page('internship', InternshipForm, InternshipCard);
+	return Page(
+		'internship',
+		InternshipFormContent,
+		initialInternshipInfo,
+		InternshipCard,
+	);
 }

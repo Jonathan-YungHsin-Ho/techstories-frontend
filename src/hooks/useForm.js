@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-export const useForm = (initialInfo, data, setData) => {
+export const useForm = (initialInfo, data, setData, page) => {
 	const [info, setInfo] = useState(initialInfo);
 	const [error, setError] = useState(false);
 	const [modalOpen, setModalOpen] = useState(false);
@@ -19,9 +19,9 @@ export const useForm = (initialInfo, data, setData) => {
 
 		// console.log(info);
 		axios
-			.post(`${process.env.REACT_APP_BACKEND_API}/onboarding`, info)
+			.post(`${process.env.REACT_APP_BACKEND_API}/${page}`, info)
 			.then((res) => {
-				setData([...data, res.data.onboarding]);
+				setData([...data, res.data[page]]);
 				setInfo(initialInfo);
 				setModalOpen(false);
 			})
