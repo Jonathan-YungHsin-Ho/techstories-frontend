@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Button, Modal, Form, Icon } from 'semantic-ui-react';
+
+import { useForm } from '../../hooks/useForm';
 
 const initialInfo = {
 	name: null,
@@ -18,31 +19,15 @@ const initialInfo = {
 };
 
 export default function InternshipForm({ data, setData }) {
-	const [info, setInfo] = useState(initialInfo);
-	const [error, setError] = useState(false);
-	const [modalOpen, setModalOpen] = useState(false);
-
-	const handleChange = (e) =>
-		setInfo({ ...info, [e.target.name]: e.target.value });
-
-	const handleRadio = (field, value) => setInfo({ ...info, [field]: value });
-
-	const handleSubmit = () => {
-		if (!info.experience) {
-			setError(true);
-			return;
-		}
-
-		console.log(info);
-		axios
-			.post(`${process.env.REACT_APP_BACKEND_API}/internship`, info)
-			.then((res) => {
-				setData([...data, res.data.internship]);
-				setInfo(initialInfo);
-				setModalOpen(false);
-			})
-			.catch((err) => console.log(err));
-	};
+	const [
+		info,
+		error,
+		modalOpen,
+		setModalOpen,
+		handleChange,
+		handleRadio,
+		handleSubmit,
+	] = useForm(initialInfo, data, setData);
 
 	return (
 		<Modal
