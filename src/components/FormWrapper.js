@@ -1,39 +1,25 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
+
+import { useForm } from '../hooks/useForm';
+
+// import OnboardingFormContent, { initialInfo } from './OnboardingFormContent';
 
 export default function FormWrapper({
 	data,
 	setData,
-	page,
-	FormComponent,
+	formContent: FormContent,
 	initialInfo,
 }) {
-	const [info, setInfo] = useState(initialInfo);
-	const [error, setError] = useState(false);
-	const [modalOpen, setModalOpen] = useState(false);
-
-	const handleChange = (e) =>
-		setInfo({ ...info, [e.target.name]: e.target.value });
-
-	const handleRadio = (field, value) => setInfo({ ...info, [field]: value });
-
-	const handleSubmit = () => {
-		if (!info.experience) {
-			setError(true);
-			return;
-		}
-
-		// console.log(info);
-		axios
-			.post(`${process.env.REACT_APP_BACKEND_API}/${page}`, info)
-			.then((res) => {
-				setData([...data, res.data.onboarding]);
-				setInfo(initialInfo);
-				setModalOpen(false);
-			})
-			.catch((err) => console.log(err));
-	};
+	const [
+		info,
+		error,
+		modalOpen,
+		setModalOpen,
+		handleChange,
+		handleRadio,
+		handleSubmit,
+	] = useForm(initialInfo, data, setData);
 
 	return (
 		<Modal
@@ -54,10 +40,11 @@ export default function FormWrapper({
 					required. The other fields are optional but would be public, so please
 					only share what you're comfortable with others seeing!
 				</p>
-				<FormComponent
+				<FormContent
+					info={info}
+					error={error}
 					handleChange={handleChange}
 					handleRadio={handleRadio}
-					error={error}
 				/>
 			</Modal.Content>
 			<Modal.Actions>
