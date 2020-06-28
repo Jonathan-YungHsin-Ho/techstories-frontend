@@ -4,8 +4,8 @@ import './App.css';
 
 import NavBar from './components/NavBar';
 import Home from './components/Home';
-import Internship from './components/Internship';
-import Onboarding from './components/Onboarding';
+import { Internship } from './components/internship';
+import { Onboarding } from './components/onboarding/';
 import About from './components/About';
 
 function App() {

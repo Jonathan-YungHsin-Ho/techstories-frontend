@@ -10,8 +10,7 @@ import {
 	Segment,
 } from 'semantic-ui-react';
 
-import OnboardingForm from './OnboardingForm';
-import OnboardingCard from './OnboardingCard';
+import { OnboardingForm, OnboardingCard } from './';
 
 export default function Onboarding() {
 	const [isLoading, setIsLoading] = useState(true);

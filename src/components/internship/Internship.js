@@ -10,8 +10,7 @@ import {
 	Segment,
 } from 'semantic-ui-react';
 
-import InternshipForm from './InternshipForm';
-import InternshipCard from './InternshipCard';
+import { InternshipForm, InternshipCard } from './';
 
 export default function Internship() {
 	const [isLoading, setIsLoading] = useState(true);
