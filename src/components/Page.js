@@ -80,13 +80,19 @@ export default function Page(page, FormContent, initialInfo, CardComponent) {
 					<CardComponent story={story} key={index} />
 				))}
 			</Card.Group>
-			{!results.length && !isLoading && (
+			{!error && !isLoading && !results.length && (
 				<Segment textAlign='center' basic>
 					No stories found
 				</Segment>
 			)}
 			{error && (
-				<Segment textAlign='center' color='red' inverted secondary>
+				<Segment
+					// circular
+					textAlign='center'
+					// style={{ width: 175, height: 175, margin: '0 auto' }}
+					color='red'
+					inverted
+					secondary>
 					Error retrieving stories!
 				</Segment>
 			)}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Icon } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
+import Experience from '../Experience';
 
 export default function InternshipCard({ story }) {
 	return (
@@ -47,14 +48,7 @@ export default function InternshipCard({ story }) {
 					</div>
 				)}
 			</Card.Content>
-			<Card.Content className='experience'>
-				<div className='experience-content'>
-					<div className='experience-padding'>
-						<Icon name='quote left' />
-						{story.experience} <Icon name='quote right' />
-					</div>
-				</div>
-			</Card.Content>
+			<Experience story={story} />
 		</Card>
 	);
 }

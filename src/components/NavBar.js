@@ -34,6 +34,13 @@ export default function NavBar() {
 						to='/internship'
 						onClick={handleClick}
 					/>
+					{/* <Menu.Item
+						name='firstJobSearch'
+						active={activeItem === 'firstjobsearch'}
+						as={Link}
+						to='/firstjobsearch'
+						onClick={handleClick}
+					/> */}
 					<Menu.Item
 						name='onboarding'
 						active={activeItem === 'onboarding'}
