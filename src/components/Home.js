@@ -30,14 +30,25 @@ export default function Home() {
 						<Segment>
 							<Image
 								as='a'
-								src='images/undraw_team_chat_y27k.svg'
-								href='onboarding'
+								src='images/undraw_interview_rmcf.svg'
+								href='/firstJobSearch'
 								size='medium'
 							/>
-							<Label attached='bottom'>Onboarding</Label>
+							<Label attached='bottom'>First Job Search</Label>
 						</Segment>
 					</Grid.Column>
 				</Grid.Row>
+				<Grid.Column>
+					<Segment>
+						<Image
+							as='a'
+							src='images/undraw_team_chat_y27k.svg'
+							href='/onboarding'
+							size='medium'
+						/>
+						<Label attached='bottom'>Onboarding</Label>
+					</Segment>
+				</Grid.Column>
 			</Grid>
 		</Container>
 	);

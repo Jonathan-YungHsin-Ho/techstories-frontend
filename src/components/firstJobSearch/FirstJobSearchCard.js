@@ -51,6 +51,11 @@ export default function FirstJobSearchCard({ story }) {
 						{story.finalInterviews}
 					</div>
 				)}
+				{story.jobOffers && (
+					<div>
+						<span className='bold'>Job Offers:</span> {story.jobOffers}
+					</div>
+				)}
 			</Card.Content>
 			<Experience story={story} />
 		</Card>

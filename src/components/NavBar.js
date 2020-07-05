@@ -15,7 +15,7 @@ export default function NavBar() {
 		}
 	}, [initialLocation]);
 
-	const handleClick = (e, { name }) => setActiveItem(name);
+	const handleClick = (_e, { name }) => setActiveItem(name);
 
 	return (
 		<header>
@@ -34,13 +34,13 @@ export default function NavBar() {
 						to='/internship'
 						onClick={handleClick}
 					/>
-					{/* <Menu.Item
+					<Menu.Item
 						name='firstJobSearch'
-						active={activeItem === 'firstjobsearch'}
+						active={activeItem === 'firstJobSearch'}
 						as={Link}
-						to='/firstjobsearch'
+						to='/firstJobSearch'
 						onClick={handleClick}
-					/> */}
+					/>
 					<Menu.Item
 						name='onboarding'
 						active={activeItem === 'onboarding'}
