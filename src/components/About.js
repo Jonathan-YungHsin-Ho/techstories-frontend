@@ -7,8 +7,7 @@ export default function About() {
 			<Header>About</Header>
 			<p>
 				This site is for developers, engineers, and other tech workers to share
-				their early-career experiences once hired. All suggestions and feedback
-				welcome!
+				their early-career experiences. All suggestions and feedback welcome!
 			</p>
 			<p>
 				Project by{' '}
