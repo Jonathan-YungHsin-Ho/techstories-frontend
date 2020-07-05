@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'semantic-ui-react';
 
-export const initialOnboardingInfo = {
+export const initialInternshipInfo = {
 	name: null,
 	email: null,
 	company: null,
@@ -9,13 +9,14 @@ export const initialOnboardingInfo = {
 	industry: null,
 	companyType: null,
 	companySize: null,
-	onboardingDuration: null,
+	internshipDuration: null,
 	mentorProvided: null,
+	positionOffered: null,
 	experience: '',
-	positiveOnboarding: null,
+	positiveInternship: null,
 };
 
-export default function OnboardingFormContent({
+export default function InternshipForm({
 	info,
 	error,
 	handleChange,
@@ -65,13 +66,11 @@ export default function OnboardingFormContent({
 				<label>Company Type:</label>
 				<Form.Radio
 					label='Startup'
-					// value='Startup'
 					checked={info.companyType === 'Startup'}
 					onChange={() => handleRadio('companyType', 'Startup')}
 				/>
 				<Form.Radio
 					label='Enterprise'
-					// value='Enterprise'
 					checked={info.companyType === 'Enterprise'}
 					onChange={() => handleRadio('companyType', 'Enterprise')}
 				/>
@@ -88,30 +87,41 @@ export default function OnboardingFormContent({
 				onChange={handleChange}
 			/>
 			<Form.Input
-				label='Onboarding Duration'
-				placeholder='Onboarding Duration'
-				name='onboardingDuration'
+				label='Internship Duration'
+				placeholder='Internship Duration'
+				name='internshipDuration'
 				onChange={handleChange}
 			/>
 			<Form.Group inline>
 				<label>Were you assigned a mentor?</label>
 				<Form.Radio
 					label='Yes'
-					// value={true}
 					checked={info.mentorProvided === true}
 					onChange={() => handleRadio('mentorProvided', true)}
 				/>
 				<Form.Radio
 					label='No'
-					// value={false}
 					checked={info.mentorProvided === false}
 					onChange={() => handleRadio('mentorProvided', false)}
+				/>
+			</Form.Group>
+			<Form.Group inline>
+				<label>Were you offered a position following your internship?</label>
+				<Form.Radio
+					label='Yes'
+					checked={info.positionOffered === true}
+					onChange={() => handleRadio('positionOffered', true)}
+				/>
+				<Form.Radio
+					label='No'
+					checked={info.positionOffered === false}
+					onChange={() => handleRadio('positionOffered', false)}
 				/>
 			</Form.Group>
 			<Form.TextArea
 				required
 				label='Your Experience'
-				placeholder='Please share your onboarding experience...'
+				placeholder='Please share your internship experience...'
 				name='experience'
 				error={
 					error && {
@@ -121,18 +131,16 @@ export default function OnboardingFormContent({
 				onChange={handleChange}
 			/>
 			<Form.Group inline>
-				<label>Did you have a positive onboarding experience?</label>
+				<label>Did you have a positive internship experience?</label>
 				<Form.Radio
 					label='Yes'
-					// value={true}
-					checked={info.positiveOnboarding === true}
-					onChange={() => handleRadio('positiveOnboarding', true)}
+					checked={info.positiveInternship === true}
+					onChange={() => handleRadio('positiveInternship', true)}
 				/>
 				<Form.Radio
 					label='No'
-					// value={false}
-					checked={info.positiveOnboarding === false}
-					onChange={() => handleRadio('positiveOnboarding', false)}
+					checked={info.positiveInternship === false}
+					onChange={() => handleRadio('positiveInternship', false)}
 				/>
 			</Form.Group>
 		</Form>

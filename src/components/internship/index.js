@@ -1,12 +1,5 @@
 import Internship from './Internship';
 import InternshipCard from './InternshipCard';
-import InternshipFormContent, {
-	initialInternshipInfo,
-} from './InternshipFormContent';
+import InternshipForm, { initialInternshipInfo } from './InternshipForm';
 
-export {
-	Internship,
-	InternshipCard,
-	InternshipFormContent,
-	initialInternshipInfo,
-};
+export { Internship, InternshipCard, InternshipForm, initialInternshipInfo };

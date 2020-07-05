@@ -1,14 +1,10 @@
 import Page from '../Page';
-import {
-	OnboardingCard,
-	OnboardingFormContent,
-	initialOnboardingInfo,
-} from './';
+import { OnboardingCard, OnboardingForm, initialOnboardingInfo } from './';
 
 export default function Onboarding() {
 	return Page(
 		'onboarding',
-		OnboardingFormContent,
+		OnboardingForm,
 		initialOnboardingInfo,
 		OnboardingCard,
 	);
