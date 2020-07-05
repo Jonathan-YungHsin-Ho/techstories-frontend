@@ -1,3 +1,15 @@
+.experience {
+	overflow-y: auto;
+}
+
+.experience-content {
+	height: 170px;
+}
+
+.experience-padding {
+	padding-bottom: 15px;
+}
+
 .bold {
 	font-weight: bold;
 }

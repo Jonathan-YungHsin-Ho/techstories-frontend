@@ -47,9 +47,13 @@ export default function InternshipCard({ story }) {
 					</div>
 				)}
 			</Card.Content>
-			<Card.Content>
-				<Icon name='quote left' />
-				{story.experience} <Icon name='quote right' />
+			<Card.Content className='experience'>
+				<div className='experience-content'>
+					<div className='experience-padding'>
+						<Icon name='quote left' />
+						{story.experience} <Icon name='quote right' />
+					</div>
+				</div>
 			</Card.Content>
 		</Card>
 	);
