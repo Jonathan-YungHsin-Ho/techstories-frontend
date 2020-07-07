@@ -9,6 +9,7 @@ export default function FormWrapper({
 	initialInfo,
 	component: FormContent,
 	page,
+	setResults,
 }) {
 	const [
 		info,
@@ -18,7 +19,7 @@ export default function FormWrapper({
 		handleChange,
 		handleRadio,
 		handleSubmit,
-	] = useForm(initialInfo, data, setData, page);
+	] = useForm(initialInfo, data, setData, page, setResults);
 
 	return (
 		<Modal

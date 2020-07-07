@@ -65,6 +65,7 @@ export default function Page(page, FormContent, initialInfo, CardComponent) {
 						initialInfo={initialInfo}
 						component={FormContent}
 						page={page}
+						setResults={setResults}
 					/>
 					<Search
 						loading={isSearching}
